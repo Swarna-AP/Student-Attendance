@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #f4f4f4;
+        }
+
+        .counter-container {
+            text-align: center;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .increase {
+            background-color: #28a745;
+            color: white;
+        }
+
+        .decrease {
+            background-color: #dc3545;
+            color: white;
+        }
+
+        .reset {
+            background-color: #007bff;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="counter-container">
+        <h2>Counter App</h2>
+        <h1 id="count">0</h1>
+
+        <button class="decrease" onclick="decrease()">-</button>
+        <button class="reset" onclick="resetCounter()">Reset</button>
+        <button class="increase" onclick="increase()">+</button>
+    </div>
+
+    <script>
+        let count = 0;
+        const countDisplay = document.getElementById("count");
+
+        function updateDisplay() {
+            countDisplay.textContent = count;
+        }
+
+        function increase() {
+            count++;
+            updateDisplay();
+        }
+
+        function decrease() {
+            count--;
+            updateDisplay();
+        }
+
+        function resetCounter() {
+            count = 0;
+            updateDisplay();
+        }
+    </script>
+
+</body>
+</html>
